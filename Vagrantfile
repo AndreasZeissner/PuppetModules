@@ -9,7 +9,7 @@ Vagrant.configure(2) do |config|
 
 
   config.vm.define "puppeter" do | puppeter_config |
-    puppeter_config.vm.hostname = "wordpress.dev"
+    puppeter_config.vm.hostname = "puppeter.dev"
     puppeter_config.vm.network "public_network"
     puts "Puppeter VM"
 
