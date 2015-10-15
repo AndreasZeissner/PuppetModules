@@ -1,0 +1,25 @@
+Files included here:
+
+apache.pp
+apache_vhost.pp
+apache_vhost.erb
+================
+Classes and templates to manage Apache servers and virtual hosts.
+
+nginx.pp
+nginx_vhost.pp
+nginx_vhost.erb
+===============
+Classes and templates to manage Nginx servers and virtual hosts.
+
+mysql.pp
+my.cnf
+mysql_db.pp
+===========
+Classes and config file for MySQL server, databases and users.
+
+ruby_build.pp
+rbenv.pp
+ruby_version.pp
+===============
+Classes to manage Ruby versions via rbenv and ruby-build.
