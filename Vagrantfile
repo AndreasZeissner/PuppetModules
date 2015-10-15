@@ -11,6 +11,7 @@ Vagrant.configure(2) do |config|
   config.vm.define "puppeter" do | puppeter_config |
     puppeter_config.vm.hostname = "puppeter.dev"
     puppeter_config.vm.network "public_network" 
+    puppeter_config.vm.synced_folder "../marketing-homepage/", "/srv/www/www.mayflower.de/htdocs/", :owner => "www-data", :group => "www-data"
     puts "Puppeter VM"
 
     puppeter_config.vm.provision "puppet" do | puppet |

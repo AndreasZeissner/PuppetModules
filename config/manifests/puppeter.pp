@@ -1,4 +1,6 @@
 node 'puppeter.dev' {
+	$dbName = "mayflower"
+
 	class { '::mysql::server':
 		root_password		=> 'root', 
 		override_options =>	{
@@ -6,11 +8,10 @@ node 'puppeter.dev' {
 				'max_connections'	=> '1024',
 			}
 		}
-
 	}
-	mysql::db { 'wordpress':
+	mysql::db { "${dbName}":
 		host 		=> 'localhost',
-		user 		=> 'wordpress',
+		user 		=> "${dbName}",
 		password 	=> 'root', 
 		sql 		=> '/tmp/wordpress.sql', 
 		require		=> File['/tmp/wordpress.sql']
@@ -19,12 +20,12 @@ node 'puppeter.dev' {
 		ensure		=> present,
 		source		=> 'puppet:///modules/mysql/wordpress.sql',
 	}
-	mysql_grant { 'wordpress@localhost/wordpress.users':
+	mysql_grant { "${dbName}@localhost/${dbName}.users":
 		ensure 		=> present, 
 		options 	=> ['GRANT'],
 		privileges 	=> ['ALL'], 
-		table 		=> ['wordpress.users'], 
-		user 		=> ['wordpress@localhost']
+		table 		=> ["${dbName}.users"], 
+		user 		=> ["${dbName}@localhost"]
 	}
 }
 

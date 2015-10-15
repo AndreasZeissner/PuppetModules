@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS users;
+
 CREATE TABLE users 
 (
 	id INT PRIMARY KEY AUTO_INCREMENT,
@@ -21,5 +23,5 @@ INSERT INTO users
 ) 
 VALUES 
 (
-	default, "WERNER", "THIS IS WERNERa"
+	default, "WERNER", "THIS ISNT WERNER"
 );
