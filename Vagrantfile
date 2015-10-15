@@ -10,11 +10,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.define "puppeter" do | puppeter_config |
     puppeter_config.vm.hostname = "puppeter.dev"
-<<<<<<< HEAD
-    puppeter_config.vm.network "private_network", ip: "192.168.1.112"
-=======
-    puppeter_config.vm.network "public_network"
->>>>>>> 087ca3a0fa2b10e4db945da761db7ebdba0ea464
+    puppeter_config.vm.network "public_network" 
     puts "Puppeter VM"
 
     puppeter_config.vm.provision "puppet" do | puppet |
