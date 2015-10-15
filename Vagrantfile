@@ -16,7 +16,7 @@ Vagrant.configure(2) do |config|
 
     puppeter_config.vm.provision "puppet" do | puppet |
       puppet.manifest_file = "puppeter.pp"
-      puppet.manifests_path = "config/manifests"
+      puppet.manifests_path = "config/manifests/cms"
       puppet.module_path = "config/modules"
       # puppet.options = ['--verbose', '--debug']
     end
